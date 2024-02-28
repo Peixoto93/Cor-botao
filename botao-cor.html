@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Botão de Mudança de Cor</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button class="change-button" onclick="mudarCorDeFundo()">
+      Clique para mudar a cor
+    </button>
+
+    <script>
+      function mudarCorDeFundo() {
+        const body = document.body;
+        const novaCor = getRandomColor(); // Função para obter uma cor aleatória
+
+        body.style.backgroundColor = novaCor;
+      }
+
+      function getRandomColor() {
+        const letras = "0123456789ABCDEF";
+        let cor = "#";
+
+        for (let i = 0; i < 6; i++) {
+          cor += letras[Math.floor(Math.random() * 16)];
+        }
+
+        return cor;
+      }
+    </script>
+  </body>
+</html>
